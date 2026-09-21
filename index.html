@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F2747">
+    <meta name="description" content="Imobiliária Prime - Encontre casas, apartamentos e terrenos para comprar e alugar. Sistema PWA.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Imob Prime">
+
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <title>Imobiliária Prime - Casas, Apartamentos e Terrenos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== HEADER / NAVBAR ====== -->
+<header class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="#home" class="logo">
+            <img src="icon-192.png" alt="Logo" class="logo-icon">
+            <span>Imobiliária <strong>Prime</strong></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link">Início</a>
+            <a href="#imoveis" class="nav-link">Imóveis</a>
+            <a href="#servicos" class="nav-link">Serviços</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#contato" class="nav-link btn-contato">Contato</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ====== HERO / BUSCA ====== -->
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <h1 class="hero-title">Encontre o imóvel dos seus sonhos</h1>
+        <p class="hero-subtitle">Casas, apartamentos e terrenos nas melhores regiões da cidade.</p>
+
+        <form class="search-box" id="searchForm">
+            <div class="search-group">
+                <label for="tipo">Tipo</label>
+                <select id="tipo" name="tipo">
+                    <option value="">Todos</option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="terreno">Terreno</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <label for="operacao">Operação</label>
+                <select id="operacao" name="operacao">
+                    <option value="">Todos</option>
+                    <option value="venda">Venda</option>
+                    <option value="aluguel">Aluguel</option>
+                </select>
+            </div>
+            <div class="search-group search-group-btn">
+                <button type="submit" class="btn-search">Buscar Imóveis</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- ====== STATS ====== -->
+<section class="stats">
+    <div class="container stats-grid">
+        <div class="stat-item">
+            <strong>1.250+</strong>
+            <span>Imóveis anunciados</span>
+        </div>
+        <div class="stat-item">
+            <strong>850+</strong>
+            <span>Clientes atendidos</span>
+        </div>
+        <div class="stat-item">
+            <strong>15</strong>
+            <span>Anos de mercado</span>
+        </div>
+        <div class="stat-item">
+            <strong>4.9★</strong>
+            <span>Avaliação média</span>
+        </div>
+    </div>
+</section>
+
+<!-- ====== IMÓVEIS EM DESTAQUE ====== -->
+<section class="section imoveis" id="imoveis">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Imóveis em Destaque</h2>
+            <p class="section-subtitle">Selecionamos as melhores oportunidades para você</p>
+        </div>
+
+        <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="casa">Casas</button>
+            <button class="filter-btn" data-filter="apartamento">Apartamentos</button>
+            <button class="filter-btn" data-filter="terreno">Terrenos</button>
+            <button class="filter-btn" data-filter="comercial">Comerciais</button>
+        </div>
+
+        <div class="imoveis-grid" id="imoveisGrid">
+            <!-- Cards são gerados via JS -->
+        </div>
+
+        <p class="no-results" id="noResults" style="display:none;">Nenhum imóvel encontrado nesta categoria.</p>
+    </div>
+</section>
+
+<!-- ====== SERVIÇOS ====== -->
+<section class="section servicos" id="servicos">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções completas em imóveis</p>
+        </div>
+
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <div class="servico-icon">🏠</div>
+                <h3>Compra e Venda</h3>
+                <p>Intermediação segura de compra e venda de imóveis com toda a documentação garantida.</p>
+            </div>
+            <div class="servico-card">
+                <div class="servico-icon">🔑</div>
+                <h3>Locação</h3>
+                <p>Aluguel de imóveis residenciais e comerciais com contrato simplificado e sem burocracia.</p>
+            </div>
+            <div class="servico-card">
+                <div class="servico-icon">📊</div>
+                <h3>Avaliação</h3>
+                <p>Avaliação profissional de imóveis para fins de venda, financiamento ou seguro.</p>
+            </div>
+            <div class="servico-card">
+                <div class="servico-icon">📋</div>
+                <h3>Assessoria Jurídica</h3>
+                <p>Assessoria completa em todas as etapas do contrato, com advogados especializados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SOBRE ====== -->
+<section class="section sobre" id="sobre">
+    <div class="container sobre-container">
+        <div class="sobre-img">
+            <div class="sobre-img-placeholder">
+                <span>Imobiliária Prime</span>
+                <small>15 anos de tradição</small>
+            </div>
+        </div>
+        <div class="sobre-text">
+            <h2 class="section-title">Sobre a Imobiliária Prime</h2>
+            <p>Há mais de 15 anos no mercado imobiliário, a Imobiliária Prime se consolidou como referência em intermediação de negócios imobiliários na região. Nossa equipe de corretores credenciados está pronta para oferecer o melhor atendimento, desde a primeira visita até a entrega das chaves.</p>
+            <p>Trabalhamos com um portfólio diversificado de imóveis residenciais, comerciais e rurais, sempre buscando as melhores oportunidades para nossos clientes. Acreditamos que comprar, vender ou alugar um imóvel deve ser uma experiência tranquila e transparente.</p>
+            <ul class="sobre-lista">
+                <li>✓ Creci ativo e regularizado</li>
+                <li>✓ Corretores credenciados</li>
+                <li>✓ Mais de 1.250 imóveis disponíveis</li>
+                <li>✓ Atendimento personalizado</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ====== CONTATO ====== -->
+<section class="section contato" id="contato">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Fale Conosco</h2>
+            <p class="section-subtitle">Entre em contato e encontre seu imóvel ideal</p>
+        </div>
+
+        <div class="contato-grid">
+            <div class="contato-info">
+                <h3>Informações</h3>
+                <p>📍 Endereço: Av. Brasil, 1000 - Centro<br>
+                   São Mateus - ES, 29930-000</p>
+                <p>📞 Telefone: (27) 99999-9999</p>
+                <p>✉️ E-mail: contato@imobiliaraprime.com.br</p>
+                <p>🕐 Atendimento: Seg-Sex 8h às 18h / Sáb 8h às 12h</p>
+            </div>
+
+            <form class="contato-form" id="contatoForm">
+                <div class="form-group">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                <p class="form-success" id="formSuccess">✓ Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <div class="logo logo-footer">
+                <img src="icon-192.png" alt="Logo" class="logo-icon">
+                <span>Imobiliária <strong>Prime</strong></span>
+            </div>
+            <p>15 anos realizando sonhos e fechando os melhores negócios imobiliários.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navegação</h4>
+            <a href="#home">Início</a>
+            <a href="#imoveis">Imóveis</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contato</h4>
+            <p>Av. Brasil, 1000 - Centro<br>São Mateus - ES</p>
+            <p>(27) 99999-9999</p>
+            <p>contato@imobiliaraprime.com.br</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Imobiliária Prime - Projeto PWA Etec São Mateus. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- ====== BOTÃO INSTALAR PWA ====== -->
+<div class="install-banner" id="installBanner">
+    <div>
+        <strong>📲 Instale nosso app</strong>
+        <span>Acesse offline e com notificações</span>
+    </div>
+    <button id="installBtn">Instalar</button>
+    <button id="closeBanner" class="close-btn">✕</button>
+</div>
+
+<a href="#home" class="back-top" id="backTop" aria-label="Voltar ao topo">↑</a>
+
+<script src="script.js"></script>
+</body>
+</html>
